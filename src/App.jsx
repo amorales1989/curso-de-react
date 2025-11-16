@@ -1,37 +1,44 @@
-
 import './App.css'
-import Navbar from './componentes/Navbar'
-import Card from './componentes/Card'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Navbar from './componentes/Navbar.jsx'
+import ItemListContainer from './componentes/ItemListContainer.jsx'
+import ItemDetailContainer from './componentes/ItemDetailContainer.jsx'
+
+function NotFound() {
+  return (
+    <div style={{
+      padding: '2rem',
+      textAlign: 'center'
+    }}>
+      <h1 style={{ fontSize: '3rem', color: '#333' }}>404</h1>
+      <p style={{ fontSize: '1.5rem', color: '#666' }}>
+        Página no encontrada
+      </p>
+      <Link 
+        to="/" 
+        style={{
+          color: '#646cff',
+          textDecoration: 'none',
+          fontSize: '1.2rem'
+        }}
+      >
+        Volver al inicio
+      </Link>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      
-      <div style={{
-        padding: '2rem',
-        display: 'flex',
-        gap: '2rem',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      }}>
-        <Card 
-          titulo="Colchon 1 plaza"
-          imagen="/ensueño.png"
-          precio={25300}
-        />
-        <Card 
-          titulo="Detergente en gel"
-          imagen="/detergente.jpg"
-          precio={1200}
-        />
-        <Card 
-          titulo="Pointura asfaltica"
-          imagen="indulacpaint2.svg"
-          precio={5900}
-        />
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/categoria/:categoria" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
