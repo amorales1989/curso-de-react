@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './componentes/Navbar.jsx'
 import ItemListContainer from './componentes/ItemListContainer.jsx'
 import ItemDetailContainer from './componentes/ItemDetailContainer.jsx'
+import Cart from './componentes/Cart.jsx'
+import CheckoutForm from './componentes/CheckoutForm.jsx'
 
 function NotFound() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path="/" element={<ItemListContainer />} />
         <Route path="/categoria/:categoria" element={<ItemListContainer />} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<CheckoutForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -1,9 +1,16 @@
+import { useState } from 'react'
 import ItemCount from './ItemCount.jsx';
+import { useCart } from '../context/CartContext.jsx'
+import { Link } from 'react-router-dom'
 
 function ItemDetail({ producto }) {
+  const [added, setAdded] = useState(false)
+  const { addItem } = useCart()
+
   const handleAddToCart = (cantidad) => {
-    alert(`Se agregaron ${cantidad} unidad(es) de ${producto.titulo} al carrito`);
-  };
+    addItem(producto, cantidad)
+    setAdded(true)
+  }
 
   return (
     <div style={{
@@ -57,10 +64,19 @@ function ItemDetail({ producto }) {
         }}>
           {producto.descripcion}
         </p>
-        <ItemCount 
-          stock={producto.stock} 
-          onAdd={handleAddToCart}
-        />
+
+        {!added ? (
+          <ItemCount 
+            stock={producto.stock} 
+            onAdd={handleAddToCart}
+          />
+        ) : (
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+            <Link to="/cart"><button style={{ padding: '0.5rem 1rem', background: '#646cff', color: 'white', border: 'none', borderRadius: '6px' }}>Ir al carrito</button></Link>
+            <Link to="/"><button style={{ padding: '0.5rem 1rem' }}>Seguir comprando</button></Link>
+          </div>
+        )}
+
       </div>
     </div>
   );

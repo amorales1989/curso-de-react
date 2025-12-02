@@ -1,0 +1,35 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.14 [39m[90m/home/alejandro/Escritorio/Proyectos/curso-de-react[39m
+
+ [31m❯[39m src/App.test.jsx [2m([22m[2m1 test[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 57[2mms[22m[39m
+[31m     [31m×[31m renders without crashing[39m[32m 55[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/App.test.jsx[2m > [22mApp[2m > [22mrenders without crashing
+[31m[1mTypeError[22m: Cannot destructure property 'getTotalQuantity' of '(0 , __vite_ssr_import_2__.useCart)(...)' as it is undefined.[39m
+[36m [2m❯[22m CartWidget src/componentes/CartWidget.jsx:[2m5:11[22m[39m
+    [90m  3| [39m
+    [90m  4| [39m[35mfunction[39m [33mCartWidget[39m() {
+    [90m  5| [39m  [35mconst[39m { getTotalQuantity } [33m=[39m [34museCart[39m()
+    [90m   | [39m          [31m^[39m
+    [90m  6| [39m  [35mconst[39m total [33m=[39m [34mgetTotalQuantity[39m()
+    [90m  7| [39m
+[90m [2m❯[22m Object.react_stack_bottom_frame node_modules/react-dom/cjs/react-dom-client.development.js:[2m25904:20[22m[39m
+[90m [2m❯[22m renderWithHooks node_modules/react-dom/cjs/react-dom-client.development.js:[2m7662:22[22m[39m
+[90m [2m❯[22m updateFunctionComponent node_modules/react-dom/cjs/react-dom-client.development.js:[2m10166:19[22m[39m
+[90m [2m❯[22m beginWork node_modules/react-dom/cjs/react-dom-client.development.js:[2m11778:18[22m[39m
+[90m [2m❯[22m runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:[2m874:13[22m[39m
+[90m [2m❯[22m performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:[2m17641:22[22m[39m
+[90m [2m❯[22m workLoopSync node_modules/react-dom/cjs/react-dom-client.development.js:[2m17469:41[22m[39m
+[90m [2m❯[22m renderRootSync node_modules/react-dom/cjs/react-dom-client.development.js:[2m17450:11[22m[39m
+[90m [2m❯[22m performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:[2m16583:35[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m   Start at [22m 23:10:10
+[2m   Duration [22m 930ms[2m (transform 150ms, setup 73ms, import 244ms, tests 57ms, environment 420ms)[22m
+

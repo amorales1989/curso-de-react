@@ -1,8 +1,10 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .logo {
@@ -11,9 +13,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +26,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -35,6 +40,10 @@
 
 .card {
   padding: 2em;
+  background-color: var(--color-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  margin: 1rem 0;
 }
 
 .read-the-docs {

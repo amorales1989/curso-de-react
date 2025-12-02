@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget.jsx';
 
 function Navbar() {
   const categorias = [
@@ -46,6 +47,9 @@ function Navbar() {
           </li>
         ))}
       </ul>
+      <div>
+        <CartWidget />
+      </div>
     </nav>
   )
 }
